@@ -435,11 +435,11 @@ export default function Portfolio6Page() {
             </div>
             <div className="grid grid-cols-3 w-[300px] mx-auto">
                 <div></div>
-                <button onMouseDown={()=>keys.up.pressed = true} onMouseUp={()=>keys.up.pressed = false} id="up-button" className="mx-2 my-2 bg-blue-900 border-2 py-5">&#8593;</button>
+                <button onTouchStart={keys.up.pressed = true} onTouchEnd={keys.up.pressed = false} onMouseDown={() => keys.up.pressed = true} onMouseUp={() => keys.up.pressed = false} id="up-button" className="mx-2 my-2 bg-blue-900 border-2 py-5">&#8593;</button>
                 <div></div>
-                <button onMouseDown={()=>keys.left.pressed = true} onMouseUp={()=>keys.left.pressed = false} id="left-button" className="mx-2 my-2 bg-blue-900 border-2 py-5">&#8592;</button>
-                <button onMouseDown={()=>keys.down.pressed = true} onMouseUp={()=>keys.down.pressed = false} id="down-button" className="mx-2 my-2 bg-blue-900 border-2 py-5">&#8595;</button>
-                <button onMouseDown={()=>keys.right.pressed = true} onMouseUp={()=>keys.right.pressed = false} id="right-button" className="mx-2 my-2 bg-blue-900 border-2 py-5">&#8594;</button>
+                <button onTouchStart={keys.left.pressed = true} onTouchEnd={keys.left.pressed = false} onMouseDown={() => keys.left.pressed = true} onMouseUp={() => keys.left.pressed = false} id="left-button" className="mx-2 my-2 bg-blue-900 border-2 py-5">&#8592;</button>
+                <button onTouchStart={keys.down.pressed = true} onTouchEnd={keys.down.pressed = false} onMouseDown={() => keys.down.pressed = true} onMouseUp={() => keys.down.pressed = false} id="down-button" className="mx-2 my-2 bg-blue-900 border-2 py-5">&#8595;</button>
+                <button onTouchStart={keys.right.pressed = true} onTouchEnd={keys.right.pressed = false} onMouseDown={() => keys.right.pressed = true} onMouseUp={() => keys.right.pressed = false} id="right-button" className="mx-2 my-2 bg-blue-900 border-2 py-5">&#8594;</button>
             </div>
         </main>
     )

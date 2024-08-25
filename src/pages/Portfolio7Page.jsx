@@ -287,13 +287,13 @@ export default function Portfolio7Page() {
                 <div className="flex mx-auto">
                     <div className="grid grid-cols-3 w-[300px]">
                         <div></div>
-                        <button onMouseDown={() => keys.up.pressed = true} onMouseUp={() => keys.up.pressed = false} className="mx-2 my-2 bg-blue-900 border-2 py-5">&#8593;</button>
+                        <button onTouchStart={keys.up.pressed = true} onTouchEnd={keys.up.pressed = false} onMouseDown={() => keys.up.pressed = true} onMouseUp={() => keys.up.pressed = false} className="mx-2 my-2 bg-blue-900 border-2 py-5">&#8593;</button>
                         <div></div>
-                        <button onMouseDown={() => keys.left.pressed = true} onMouseUp={() => keys.left.pressed = false} className="mx-2 my-2 bg-blue-900 border-2 py-5">&#8592;</button>
-                        <button onMouseDown={() => keys.down.pressed = true} onMouseUp={() => keys.down.pressed = false} className="mx-2 my-2 bg-blue-900 border-2 py-5">&#8595;</button>
-                        <button onMouseDown={() => keys.right.pressed = true} onMouseUp={() => keys.right.pressed = false} className="mx-2 my-2 bg-blue-900 border-2 py-5">&#8594;</button>
+                        <button onTouchStart={keys.left.pressed = true} onTouchEnd={keys.left.pressed = false} onMouseDown={() => keys.left.pressed = true} onMouseUp={() => keys.left.pressed = false} className="mx-2 my-2 bg-blue-900 border-2 py-5">&#8592;</button>
+                        <button onTouchStart={keys.down.pressed = true} onTouchEnd={keys.down.pressed = false} onMouseDown={() => keys.down.pressed = true} onMouseUp={() => keys.down.pressed = false} className="mx-2 my-2 bg-blue-900 border-2 py-5">&#8595;</button>
+                        <button onTouchStart={keys.right.pressed = true} onTouchEnd={keys.right.pressed = false} onMouseDown={() => keys.right.pressed = true} onMouseUp={() => keys.right.pressed = false} className="mx-2 my-2 bg-blue-900 border-2 py-5">&#8594;</button>
                     </div>
-                    <button onMouseDown={() => keys.Space.pressed = true} onMouseUp={() => keys.Space.pressed = false} className="mx-2 my-2 bg-blue-900 border-2 py-5 px-5">Laser</button>
+                    <button onTouchStart={keys.Space.pressed = true} onTouchEnd={keys.Space.pressed = false} onMouseDown={() => keys.Space.pressed = true} onMouseUp={() => keys.Space.pressed = false} className="mx-2 my-2 bg-blue-900 border-2 py-5 px-5">Laser</button>
                 </div>
             </div>
         </main>

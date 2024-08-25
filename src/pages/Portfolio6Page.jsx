@@ -419,7 +419,7 @@ export default function Portfolio6Page() {
     }, []);
 
     return (
-        <main className="flex-1">
+        <main className="flex-1 overflow-x-hidden">
             <div className=" py-2 max-w-6xl mx-auto">
                 <h2 className="text-4xl text-center py-10">JavaScript RPG Project</h2>
                 <h3 className="text-xl text-teal-300">Instructions</h3>

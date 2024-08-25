@@ -72,7 +72,7 @@ export default function PortfolioPage() {
     });
 
     return (
-        <main className="flex-1 px-1">
+        <main className="flex-1 px-1 overflow-x-hidden">
             <div className=" py-2 max-w-6xl mx-auto">
                 <h2 className="text-4xl text-center py-10">Current Projects</h2>
                 <div id="current-projects-section">

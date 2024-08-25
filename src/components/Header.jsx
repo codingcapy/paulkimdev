@@ -29,28 +29,48 @@ export default function Header() {
     return (
         <header className="md:flex bg-slate-800 py-2 sticky top-0 z-10">
             <div className="flex justify-between px-2">
-                <NavLink to="./index.html"><img src={capyness} alt="Capytech Icon" className="max-w-10" /></NavLink>
+                <NavLink to="/"><img src={capyness} alt="Capytech Icon" className="max-w-10" /></NavLink>
                 <button id="hamburger-menu" className="text-3xl md:hidden" onClick={slideToggle}>&#127828;</button>
             </div>
             <nav id="main-nav" className={`${navVisible ? 'visible' : ''} md:block`}>
-                <ul className="md:flex">
+                <ul className="md:hidden">
                     <li className="glow px-5 py-3 text-center md:block rounded-md">
-                        <NavLink to="/">Home</NavLink>
+                        <NavLink to="/" onClick={slideToggle}>Home</NavLink>
                     </li>
                     <li className="glow px-5 py-3 text-center md:block rounded-md">
-                        <NavLink to="/portfolio">Portfolio</NavLink>
+                        <NavLink to="/portfolio" onClick={slideToggle}>Portfolio</NavLink>
                     </li>
                     <li className="glow px-5 py-3 text-center md:block rounded-md">
-                        <NavLink to="/articles">Articles</NavLink>
+                        <NavLink to="/articles" onClick={slideToggle}>Articles</NavLink>
                     </li>
                     <li className="glow px-5 py-3 text-center md:block rounded-md">
-                        <NavLink to="/about">About</NavLink>
+                        <NavLink to="/about" onClick={slideToggle}>About</NavLink>
                     </li>
                     <li className="glow px-5 py-3 text-center md:block rounded-md">
-                        <NavLink to="/resume">Resume</NavLink>
+                        <NavLink to="/resume" onClick={slideToggle}>Resume</NavLink>
                     </li>
                     <li className="glow px-5 py-3 text-center md:block rounded-md">
-                        <NavLink to="/contact">Contact</NavLink>
+                        <NavLink to="/contact" onClick={slideToggle}>Contact</NavLink>
+                    </li>
+                </ul>
+                <ul className="hidden md:flex">
+                    <li className="glow px-5 py-3 text-center md:block rounded-md">
+                        <NavLink to="/" >Home</NavLink>
+                    </li>
+                    <li className="glow px-5 py-3 text-center md:block rounded-md">
+                        <NavLink to="/portfolio" >Portfolio</NavLink>
+                    </li>
+                    <li className="glow px-5 py-3 text-center md:block rounded-md">
+                        <NavLink to="/articles" >Articles</NavLink>
+                    </li>
+                    <li className="glow px-5 py-3 text-center md:block rounded-md">
+                        <NavLink to="/about" >About</NavLink>
+                    </li>
+                    <li className="glow px-5 py-3 text-center md:block rounded-md">
+                        <NavLink to="/resume" >Resume</NavLink>
+                    </li>
+                    <li className="glow px-5 py-3 text-center md:block rounded-md">
+                        <NavLink to="/contact" >Contact</NavLink>
                     </li>
                 </ul>
             </nav>

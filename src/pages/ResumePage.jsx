@@ -64,7 +64,7 @@ export default function ResumePage(){
     });
 
     return(
-        <main className="flex-1 px-1">
+        <main className="flex-1 px-1 overflow-x-hidden">
             <div className="py-2 max-w-6xl mx-auto">
                 <h1 className="text-4xl text-center py-10">Resume</h1>
                 <img src={resume} alt="Paul Kim" className="md:max-w-4xl mx-auto"/>

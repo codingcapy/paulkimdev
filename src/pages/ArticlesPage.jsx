@@ -65,7 +65,7 @@ export default function ArticlesPage() {
     });
 
     return (
-        <main className="flex-1 px-1">
+        <main className="flex-1 px-1 overflow-x-hidden">
             <div className=" py-2 max-w-6xl mx-auto">
                 <h1 className="text-4xl text-center py-10">Blog</h1>
                 <section id="articles-section">

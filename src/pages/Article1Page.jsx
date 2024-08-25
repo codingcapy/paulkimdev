@@ -5,7 +5,7 @@ export default function Article1Page() {
 
 
     return (
-        <main className="flex-1">
+        <main className="flex-1 overflow-x-hidden">
             <article className="px-2 md:w-[1000px] mx-auto">
                 <h2 className="text-4xl text-center py-10">Frameworks, Modules and Packages</h2>
                 <img src={modules} alt="Web Frameworks" className="mx-auto w-[300px] md:w-[800px] pb-10" />

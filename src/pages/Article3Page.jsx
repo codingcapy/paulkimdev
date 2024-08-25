@@ -4,7 +4,7 @@ export default function Article3Page() {
 
 
     return (
-        <main className="flex-1">
+        <main className="flex-1 overflow-x-hidden">
             <h2 className="text-4xl text-center py-10">Computer Science, Software Development, Bootcamps</h2>
             <img src="../image/web-frameworks.jpg" alt="Scrum Project Board" className="scrum-img" />
             <p className="py-2 text-teal-300">Posted on: January 10, 2024</p>

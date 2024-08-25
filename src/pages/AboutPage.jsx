@@ -64,7 +64,7 @@ export default function AboutPage(){
     });
 
     return(
-        <main className="flex-1 px-1">
+        <main className="flex-1 px-1 overflow-x-hidden">
             <div className="timeline-content js--fadeInLeft py-2 max-w-6xl mx-auto">
                 <h1 className="text-4xl text-center py-10">About Me</h1>
                 <div className="md:flex">

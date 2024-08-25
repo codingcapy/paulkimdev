@@ -271,17 +271,17 @@ export default function Portfolio7Page() {
     }, [])
 
     return (
-        <main className="flex-1">
+        <main className="flex-1 overflow-x-hidden">
             <div className=" py-2 max-w-4xl mx-auto">
                 <h4 className="text-4xl text-center py-10">JavaScript Smup Project</h4>
                 <h3 className="text-xl text-teal-300">Instructions:</h3>
                 <p className="py-2">Use <strong>WASD or the four buttons above</strong> to move the yellow spacecraft. Use <strong>L</strong> to <strong>shoot lasers</strong>.
                 </p>
                 <div id="container" className="relative mx-auto md:w-[500px]">
-                    <div className="absolute text-white pl-2 text-xl">{`Lives: ${livesDisplay}`}</div>
-                    <div className="absolute top-7 text-white pl-2 text-xl">{`Score: ${scoreDisplay}`}</div>
-                    <div className="absolute text-white pl-2 text-xl left-[400px]">{`Level: ${levelDisplay}`}</div>
-                    <div className={livesDisplay > 0 ? "hidden" : "absolute top-[300px] left-10"}>Game Over</div>
+                    <div className="absolute text-white left-5 md:left-0 pl-2 text-xl">{`Lives: ${livesDisplay}`}</div>
+                    <div className="absolute top-7 text-white left-5 md:left-0 pl-2 text-xl">{`Score: ${scoreDisplay}`}</div>
+                    <div className="absolute text-white pl-2 text-xl left-[235px] md:left-[400px]">{`Level: ${levelDisplay}`}</div>
+                    <div className={livesDisplay > 0 ? "hidden" : "absolute top-[220px] md:top-[300px] left-[80px] md:left-[160px] text-4xl"}>Game Over</div>
                     <canvas ref={canvasRef} className="border-2 mx-auto"></canvas>
                 </div>
                 <div className="flex mx-auto">

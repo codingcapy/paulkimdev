@@ -26,59 +26,6 @@ export default function Header() {
         setNavVisible(!navVisible);
     };
 
-    $(function () {
-        window.sr = ScrollReveal();
-        if ($(window).width() < 768) {
-            if ($('.timeline-content').hasClass('js--fadeInLeft')) {
-                $('.timeline-content').removeClass('js--fadeInLeft').addClass('js--fadeInRight');
-            }
-            sr.reveal('.js--fadeInRight', {
-                origin: 'right',
-                distance: '300px',
-                easing: 'ease-in-out',
-                duration: 800,
-            });
-        }
-        else {
-            sr.reveal('.js--fadeInLeft', {
-                origin: 'left',
-                distance: '300px',
-                easing: 'ease-in-out',
-                duration: 800,
-            });
-            sr.reveal('.js--fadeInRight', {
-                origin: 'right',
-                distance: '300px',
-                easing: 'ease-in-out',
-                duration: 800,
-            });
-            sr.reveal('.js--fadeInBottom', {
-                origin: 'bottom',
-                distance: '300px',
-                easing: 'ease-in-out',
-                duration: 800,
-            });
-            sr.reveal('.js--fadeInTop', {
-                origin: 'top',
-                distance: '300px',
-                easing: 'ease-in-out',
-                duration: 800,
-            });
-        }
-        sr.reveal('.js--fadeInLeft', {
-            origin: 'left',
-            distance: '300px',
-            easing: 'ease-in-out',
-            duration: 800,
-        });
-        sr.reveal('.js--fadeInRight', {
-            origin: 'right',
-            distance: '300px',
-            easing: 'ease-in-out',
-            duration: 800,
-        });
-    });
-
     return (
         <header className="md:flex bg-slate-800 py-2 sticky top-0 z-10">
             <div className="flex justify-between px-2">

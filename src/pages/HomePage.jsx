@@ -2,6 +2,7 @@
 import $ from 'jquery';
 import ScrollReveal from 'scrollreveal'
 import { useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
 import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
@@ -20,6 +21,10 @@ import visioncoding from "/visioncoding.jpg"
 import capychat from "/capychat.jpg"
 import capyfinance from "/capyfinance.jpg"
 import cocodogo from "/capysocial.jpg"
+import capynext from "/capynext.jpg"
+import redknight from "/red_knight.jpg"
+import youtubeclone from "/react-project.jpg"
+import modules from "/web-frameworks.jpg"
 
 export default function HomePage() {
 
@@ -103,7 +108,7 @@ export default function HomePage() {
                             Express.js and Next.js.</p>
                         <div className="js--fadeInLeft flex py-5">
                             <div className="rounded-md transition ease-in-out duration-300">
-                                <a href="https://www.linkedin.com/in/sunghun-kim-19244250/?locale=en_US"
+                                <a href="https://www.linkedin.com/in/paul-sunghun-kim/"
                                     target="_blank">
                                     <FaLinkedin size={50} className="glow" />
                                 </a>
@@ -272,7 +277,80 @@ export default function HomePage() {
                                     </figcaption>
                                 </a>
                             </article>
+                            <article className="timeline-content js--fadeInRight py-10">
+                                <a href="https://capynext.vercel.app/" target="_blank" className="md:flex">
+                                    <figure>
+                                        <img src={capynext} alt="CapyNext"
+                                            className="md:max-w-60 transition-transform ease-in-out duration-300 md:hover:scale-110" />
+                                    </figure>
+                                    <figcaption className="md:pl-10">
+                                        <div className="flex">
+                                            <h3 className="text-xl text-teal-300 pr-1">NextJS Serverless Social Platform</h3>
+                                        </div>
+                                        <p className="text-gray-400">This project is a full-stack web app written in NextJS 14
+                                            and MongoDB
+                                            that
+                                            uses next-auth user authentication and allows users to post, comment, reply, and
+                                            vote similar
+                                            to
+                                            platforms like Reddit.</p>
+                                        <p className="tertiary-font pt-3">Stack: NextJS 14, MongoDB, Vercel</p>
+                                    </figcaption>
+                                </a>
+                            </article>
+                            <article className="timeline-content js--fadeInLeft py-10">
+                                <a href="https://codingcapy.github.io/capytech-react" target="_blank" className="md:flex">
+                                    <figure>
+                                        <img src={youtubeclone} alt="Capytech React Project"
+                                            className="md:max-w-60 transition-transform ease-in-out duration-300 md:hover:scale-110" />
+                                    </figure>
+                                    <figcaption className="md:pl-10">
+                                        <h3 className="text-xl text-teal-300">Youtube Clone Front End React</h3>
+                                        <p className="text-gray-400">This project is a website written entirely in React that
+                                            simulates the front end of
+                                            Youtube.</p>
+                                        <p className="tertiary-font pt-3">Stack: Node, Express, React, Vite, MongoDB, Render</p>
+                                    </figcaption>
+                                </a>
+                            </article>
+                            <article className="timeline-content js--fadeInRight py-5">
+                                <NavLink to="/portfolio/6" className="md:flex">
+                                    <figure>
+                                        <img src={redknight} alt="JavaScript RPG" className="md:max-w-60" />
+                                    </figure>
+                                    <figcaption className="md:pl-10">
+                                        <h3 className="text-xl text-teal-300">JavaScript RPG</h3>
+                                        <p className="text-gray-400">Click here to play! This project is a JavaScript RPG game I
+                                            recently completed.</p>
+                                        <p className="tertiary-font pt-3">Stack: HTML5, CSS3, JavaScript ES06, JQuery</p>
+                                    </figcaption>
+                                </NavLink>
+                            </article>
                         </div>
+                        <div className="text-2xl py-2">
+                            <div
+                                className="hidden md:block w-[10px] h-[10px] bg-white rounded-full relative top-[22px] left-[-46px] ">
+                            </div>
+                            <h2>Some of my thoughts...</h2>
+                        </div>
+                        <article className="timeline-content js--fadeInLeft py-2">
+                            <figure>
+                                <NavLink to="/articles/1" className="md:flex">
+                                    <img src={modules} alt="Web Frameworks"
+                                        className="md:max-w-60 transition-transform ease-in-out duration-300 md:hover:scale-110"/>
+                                        <figcaption className="md:pl-10">
+                                            <h2 className="text-xl text-teal-300">Frameworks, Modules and Packages</h2>
+                                            <p>Posted on: January 10, 2024</p>
+                                            <p className="text-gray-400">There's a lot of conflicting opinions among
+                                                engineers out there about the use of web frameworks,
+                                                modules
+                                                and
+                                                libraries.
+                                            </p>
+                                        </figcaption>
+                                </NavLink>
+                            </figure>
+                        </article>
                     </div>
                 </div>
             </div>

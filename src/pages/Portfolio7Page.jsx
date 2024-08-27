@@ -46,6 +46,10 @@ export default function Portfolio7Page() {
     } // end function isColliding
 
     useEffect(() => {
+        console.log("key change detected")
+    }, [keys])
+
+    useEffect(() => {
         const canvas = canvasRef.current;
         canvas.width = width
         canvas.height = height
@@ -171,59 +175,60 @@ export default function Portfolio7Page() {
         const player = new Player({ position: { x: canvas.width / 2 - spaceshipWidth / 2, y: canvas.height / 2 }, velocity: { x: 0, y: 0 } });
 
         function animate() {
+            const movementVelocity = 5;
             window.requestAnimationFrame(animate);
             if (lives < 0) {
                 return;
             }
             background.draw();
-            if (wave.length == 0) {
-                level += 1;
-                waveSize += 5;
-                setLives(lives);
-                setLevel(level);
-                for (let i = 0; i < waveSize; ++i) {
-                    let enemy = new Enemy({ imageSrc: enemies[Math.floor(Math.random() * enemies.length)], position: { x: Math.floor(Math.random() * (maxEnemyXPosition)) + 50, y: Math.floor(Math.random() * (-200)) + -50 } });
-                    wave.push(enemy);
-                }
-            }
-            wave.forEach(enemy => {
-                const enemyIndex = enemies.indexOf(enemy);
-                if (isColliding({ rectangle1: player, rectangle2: enemy })) {
-                    lives -= 1;
-                    setLives(lives);
-                    wave.splice(enemyIndex, 1);
-                }
-                if (enemy.position.y > 695) {
-                    wave.splice(enemyIndex, 1);
-                }
-                enemy.update();
-            });
+            // if (wave.length == 0) {
+            //     level += 1;
+            //     waveSize += 5;
+            //     setLives(lives);
+            //     setLevel(level);
+            //     for (let i = 0; i < waveSize; ++i) {
+            //         let enemy = new Enemy({ imageSrc: enemies[Math.floor(Math.random() * enemies.length)], position: { x: Math.floor(Math.random() * (maxEnemyXPosition)) + 50, y: Math.floor(Math.random() * (-200)) + -50 } });
+            //         wave.push(enemy);
+            //     }
+            // }
+            // wave.forEach(enemy => {
+            //     const enemyIndex = enemies.indexOf(enemy);
+            //     if (isColliding({ rectangle1: player, rectangle2: enemy })) {
+            //         lives -= 1;
+            //         setLives(lives);
+            //         wave.splice(enemyIndex, 1);
+            //     }
+            //     if (enemy.position.y > 695) {
+            //         wave.splice(enemyIndex, 1);
+            //     }
+            //     enemy.update();
+            // });
             player.update();
             player.velocity.x = 0;
             player.velocity.y = 0;
-            wave.forEach(enemy => {
-                const enemyIndex = enemies.indexOf(enemy);
-                player.lasers.forEach(laser => {
-                    const laserIndex = player.lasers.indexOf(laser);
-                    if (isColliding({ rectangle1: laser, rectangle2: enemy })) {
-                        score += 100;
-                        setScore(score);
-                        wave.splice(enemyIndex, 1);
-                        player.lasers.splice(laserIndex, 1);
-                    }
-                })
-            });
+            // wave.forEach(enemy => {
+            //     const enemyIndex = enemies.indexOf(enemy);
+            //     player.lasers.forEach(laser => {
+            //         const laserIndex = player.lasers.indexOf(laser);
+            //         if (isColliding({ rectangle1: laser, rectangle2: enemy })) {
+            //             score += 100;
+            //             setScore(score);
+            //             wave.splice(enemyIndex, 1);
+            //             player.lasers.splice(laserIndex, 1);
+            //         }
+            //     })
+            // });
             if (keys.up.pressed && player.position.y > 0) {
-                player.velocity.y = -3;
+                player.velocity.y = -movementVelocity;
             }
             if (keys.left.pressed && player.position.x > 0) {
-                player.velocity.x = -3;
+                player.velocity.x = -movementVelocity;
             }
             if (keys.down.pressed && player.position.y < canvas.height - player.height) {
-                player.velocity.y = 3;
+                player.velocity.y = movementVelocity;
             }
             if (keys.right.pressed && player.position.x < canvas.width - player.width) {
-                player.velocity.x = 3;
+                player.velocity.x = movementVelocity;
             }
             if (keys.Space.pressed) {
                 player.shoot();
@@ -284,16 +289,18 @@ export default function Portfolio7Page() {
                     <div className={livesDisplay > 0 ? "hidden" : "absolute top-[220px] md:top-[300px] left-[80px] md:left-[160px] text-4xl"}>Game Over</div>
                     <canvas ref={canvasRef} className="border-2 mx-auto"></canvas>
                 </div>
-                <div className="flex mx-auto">
-                    <div className="grid grid-cols-3 w-[300px]">
-                        <div></div>
-                        <button onTouchStart={keys.up.pressed = true} onTouchEnd={keys.up.pressed = false} onMouseDown={() => keys.up.pressed = true} onMouseUp={() => keys.up.pressed = false} className="mx-2 my-2 bg-blue-900 border-2 py-5">&#8593;</button>
-                        <div></div>
-                        <button onTouchStart={keys.left.pressed = true} onTouchEnd={keys.left.pressed = false} onMouseDown={() => keys.left.pressed = true} onMouseUp={() => keys.left.pressed = false} className="mx-2 my-2 bg-blue-900 border-2 py-5">&#8592;</button>
-                        <button onTouchStart={keys.down.pressed = true} onTouchEnd={keys.down.pressed = false} onMouseDown={() => keys.down.pressed = true} onMouseUp={() => keys.down.pressed = false} className="mx-2 my-2 bg-blue-900 border-2 py-5">&#8595;</button>
-                        <button onTouchStart={keys.right.pressed = true} onTouchEnd={keys.right.pressed = false} onMouseDown={() => keys.right.pressed = true} onMouseUp={() => keys.right.pressed = false} className="mx-2 my-2 bg-blue-900 border-2 py-5">&#8594;</button>
+                <div className="flex flex-col mx-auto">
+                    <div className="flex mx-auto">
+                        <div className="grid grid-cols-3 w-[300px]">
+                            <div></div>
+                            <button onTouchStart={() => keys.up.pressed = true} onTouchEnd={() => keys.up.pressed = false} onMouseDown={() => keys.up.pressed = true} onMouseUp={() => keys.up.pressed = false} className="mx-2 my-2 bg-blue-900 border-2 py-5">&#8593;</button>
+                            <div></div>
+                            <button onTouchStart={() => keys.left.pressed = true} onTouchEnd={() => keys.left.pressed = false} onMouseDown={() => keys.left.pressed = true} onMouseUp={() => keys.left.pressed = false} className="mx-2 my-2 bg-blue-900 border-2 py-5">&#8592;</button>
+                            <button onTouchStart={() => keys.down.pressed = true} onTouchEnd={() => keys.down.pressed = false} onMouseDown={() => keys.down.pressed = true} onMouseUp={() => keys.down.pressed = false} className="mx-2 my-2 bg-blue-900 border-2 py-5">&#8595;</button>
+                            <button onTouchStart={() => keys.right.pressed = true} onTouchEnd={() => keys.right.pressed = false} onMouseDown={() => keys.right.pressed = true} onMouseUp={() => keys.right.pressed = false} className="mx-2 my-2 bg-blue-900 border-2 py-5">&#8594;</button>
+                        </div>
+                        <button onTouchStart={() => keys.Space.pressed = true} onTouchEnd={() => keys.Space.pressed = false} onMouseDown={() => keys.Space.pressed = true} onMouseUp={() => keys.Space.pressed = false} className="mx-2 my-2 bg-blue-900 border-2 py-5 px-5">Laser</button>
                     </div>
-                    <button onTouchStart={keys.Space.pressed = true} onTouchEnd={keys.Space.pressed = false} onMouseDown={() => keys.Space.pressed = true} onMouseUp={() => keys.Space.pressed = false} className="mx-2 my-2 bg-blue-900 border-2 py-5 px-5">Laser</button>
                 </div>
             </div>
         </main>

@@ -86,7 +86,7 @@ export default function HomePage() {
     });
 
     return (
-        <main className="flex-1 max-w-7xl px-1 mx-auto overflow-x-hidden">
+        <main className="flex-1 max-w-7xl px-1 mx-auto overflow-hidden">
             <div className="py-2 md:flex mx-auto">
                 <div className="my-10 pr-10 flex-1">
                     <div className="md:fixed top-28 z-30 md:w-[250px] lg:w-fit">
@@ -130,7 +130,7 @@ export default function HomePage() {
                 <div className="py-10 flex-1">
                     <div className="md:border-l-2 md:pl-10">
                         <div
-                            className="hidden md:block w-[10px] h-[10px] bg-white rounded-full relative top-[0px] left-[-46px]">
+                            className="timeline-content js--fadeInBottom hidden md:block w-[10px] h-[10px] bg-white rounded-full relative top-[0px] left-[-46px]">
                         </div>
                         <div className="flex">
                             <p className="timeline-content js--fadeInRight py-2 text-gray-400">I have
@@ -143,7 +143,7 @@ export default function HomePage() {
                         </div>
                         <div className="text-2xl py-2">
                             <div
-                                className="hidden md:block w-[10px] h-[10px] bg-white rounded-full relative top-[22px] left-[-46px] ">
+                                className="timeline-content js--fadeInBottom hidden md:block w-[10px] h-[10px] bg-white rounded-full relative top-[22px] left-[-46px] ">
                             </div>
                             <h2 className="text-2xl">My tech stack</h2>
                         </div>
@@ -187,7 +187,7 @@ export default function HomePage() {
                         </div>
                         <div className="py-2">
                             <div
-                                className="hidden md:block w-[10px] h-[10px] bg-white rounded-full relative top-[22px] left-[-46px] ">
+                                className="timeline-content js--fadeInBottom hidden md:block w-[10px] h-[10px] bg-white rounded-full relative top-[22px] left-[-46px] ">
                             </div>
                             <h2 className='text-2xl'>Some things I've built...</h2>
                             <article className="timeline-content js--fadeInLeft py-10">
@@ -201,9 +201,7 @@ export default function HomePage() {
                                             <h3 className="text-xl text-teal-300 pr-1">Company Website</h3>
                                         </div>
                                         <p className="text-gray-400">Official Live Website for Vision Coding Academy in
-                                            Vancouver, BC, Canada that I have single-handedly built in collaboration with
-                                            design references from UI/UX and graphic designers. UI/UX credits to:
-                                            @stephology</p>
+                                            Vancouver, BC, Canada that my team and I have built, designed, tested, optimized, and deployed, currently continuously integrating and deploying new features and content.</p>
                                         <p className="tertiary-font pt-3">Stack: HTML, CSS, JS, React, Node Express, Vite,
                                             PostgreSQL, Bluehost,
                                             Railway</p>
@@ -329,7 +327,7 @@ export default function HomePage() {
                         </div>
                         <div className="text-2xl py-2">
                             <div
-                                className="hidden md:block w-[10px] h-[10px] bg-white rounded-full relative top-[22px] left-[-46px] ">
+                                className="timeline-content js--fadeInBottom hidden md:block w-[10px] h-[10px] bg-white rounded-full relative top-[22px] left-[-46px] ">
                             </div>
                             <h2>Some of my thoughts...</h2>
                         </div>
@@ -337,17 +335,17 @@ export default function HomePage() {
                             <figure>
                                 <NavLink to="/articles/1" className="md:flex">
                                     <img src={modules} alt="Web Frameworks"
-                                        className="md:max-w-60 transition-transform ease-in-out duration-300 md:hover:scale-110"/>
-                                        <figcaption className="md:pl-10">
-                                            <h2 className="text-xl text-teal-300">Frameworks, Modules and Packages</h2>
-                                            <p>Posted on: January 10, 2024</p>
-                                            <p className="text-gray-400">There's a lot of conflicting opinions among
-                                                engineers out there about the use of web frameworks,
-                                                modules
-                                                and
-                                                libraries.
-                                            </p>
-                                        </figcaption>
+                                        className="md:max-w-60 transition-transform ease-in-out duration-300 md:hover:scale-110" />
+                                    <figcaption className="md:pl-10">
+                                        <h2 className="text-xl text-teal-300">Frameworks, Modules and Packages</h2>
+                                        <p>Posted on: January 10, 2024</p>
+                                        <p className="text-gray-400">There's a lot of conflicting opinions among
+                                            engineers out there about the use of web frameworks,
+                                            modules
+                                            and
+                                            libraries.
+                                        </p>
+                                    </figcaption>
                                 </NavLink>
                             </figure>
                         </article>
